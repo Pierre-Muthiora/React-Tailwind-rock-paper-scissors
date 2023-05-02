@@ -76,7 +76,7 @@ function App() {
       </section>
 
       <section className='relative'>
-        <div className={gameOver ? 'opacity-0 transition duration-700 ease-in' : 'opacity-100'}>
+        <div className={gameOver ? 'opacity-0 transition duration-500 ease-in' : 'opacity-100'}>
           <div className='flex justify-center space-x-14 h-60'>
             <div className='w-64'>
               <img src={`/assets/${myChoice}2.png`} alt="Your hand" />
@@ -88,7 +88,7 @@ function App() {
 
           <div className='flex justify-center items-center'>
             {choice.map((choice, index) =>
-              <button className='bg-[#48b8bc] border font-bold rounded-md p-3 w-28 text-xl cursor-pointer' key={index} onClick={() => handleOnClick(choice)} disabled={gameOver}>{choice}</button>
+              <button className='bg-[#48b4b8] hover:bg-[#2b687867] border font-bold rounded-md p-3 w-28 text-xl cursor-pointer z-10' key={index} onClick={() => handleOnClick(choice)} disabled={gameOver}>{choice}</button>
             )}
           </div>
           <div className='p-10'>
@@ -97,8 +97,8 @@ function App() {
         </div>
 
         <section className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[529px] h-[378px] font-semibold'>
-          <h2 className='text-5xl tracking-widest mt-16'>{finalResult}</h2>
-          {gameOver && <button className='bg-[#fb6837] mt-32 border font-bold rounded-md p-3 w-28 text-xl cursor-pointer' onClick={() => restart()}>Restart</button>}
+          <h2 className={finalResult === "You win" ? 'text-green-600 text-5xl tracking-widest mt-16 font-bold' : 'text-red-700 text-5xl tracking-widest mt-16 font-bold' }>{finalResult}</h2>
+          {gameOver && <button className='bg-[#fb6837] mt-32 border font-bold rounded-md p-3 w-28 text-xl cursor-pointer hover:scale-125 duration-300' onClick={() => restart()}>Restart</button>}
         </section>
 
       </section>
