@@ -65,7 +65,7 @@ function App() {
         </div>
         <div className='flex justify-around items-center h-28 text-4xl font-bold'>
           <div>
-            <h3>Me</h3>
+            <h3>You</h3>
             <p className='font-normal text-[#fb6837]'>{myPoints}</p>
           </div>
           <div>
